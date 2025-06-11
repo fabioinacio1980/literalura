@@ -27,9 +27,9 @@ public class Principal {
         this.autorRepository = autorRepository;
     }
 
-    public void muestraElMenu() {
-        var opcion = -1;
-        while (opcion != 0) {
+    public void mostrarMenu() {
+        var opcao = -1;
+        while (opcao != 0) {
             System.out.println("*********************************\n");
             var menu = """
                     1 - Buscar livros pelo Título
@@ -50,9 +50,9 @@ public class Principal {
                 System.out.println("Número inválido, insira um número disponível no menu!");
                 teclado.nextLine();
             }
-            opcion = teclado.nextInt();
+            opcao = teclado.nextInt();
             teclado.nextLine();
-            switch (opcion) {
+            switch (opcao) {
                 case 1:
                     buscarLivros();
                     break;
@@ -123,7 +123,7 @@ public class Principal {
                         livroRepository.save(livro);
                     }
 
-                    Integer numeroDescargas = livro.getNumeroDownloads() != null ? livro.getNumeroDownloads() : 0;
+                    Integer numeroDownloads = livro.getNumeroDownloads() != null ? livro.getNumeroDownloads() : 0;
                     System.out.println("********** Livro **********");
                     System.out.printf("Titulo: %s%nAutor: %s%nIdioma: %s%nNumero de Downloads: %s%n",
                             livro.getTitulo(), autor1.getNome(), livro.getIdioma(), livro.getNumeroDownloads());
@@ -205,7 +205,7 @@ public class Principal {
                 case 0:
                     return;
                 default:
-                    System.out.println("Ningún idioma seleccionado");
+                    System.out.println("Nenhum idioma selecionado");
             }
         }
     }
@@ -231,8 +231,8 @@ public class Principal {
                 .findFirst()
                 .orElse(null);
         System.out.println("******************************************************");
-        System.out.printf("%nLivro mais Baixado: %s%nNúmero de descargas: " +
-                        "%d%n%nLivro menos Baixado: %s%nNúmero de descargas: " +
+        System.out.printf("%nLivro mais Baixado: %s%nNúmero de downloads: " +
+                        "%d%n%nLivro menos Baixado: %s%nNúmero de downloads: " +
                         "%d%n%n", livroMaisBaixado.getTitulo(), est.getMax(),
                 livroMenosBaixado.getTitulo(), est.getMin());
         System.out.println("******************************************************");
