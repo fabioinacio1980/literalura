@@ -1,16 +1,6 @@
 package br.com.fabionacio.literalura.service;
 
-import br.com.fabionacio.literalura.dto.EpisodioDTO;
-import br.com.fabionacio.literalura.dto.SerieDTO;
-import br.com.fabionacio.literalura.model.Categoria;
-import br.com.fabionacio.literalura.model.Serie;
-import br.com.fabionacio.literalura.repository.ISerieRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class SerieService {
